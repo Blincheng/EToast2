@@ -33,6 +33,5 @@ Step 2. Add the dependency
 	public void showShortText(String text) {
 		Toast.makeText(mActivity, text, Toast.LENGTH_SHORT).show();
 	}
-  由于是基于Activity实现的，所以Context只能使用当前Activity的应用
   
   博文地址：[【Android】当关闭通知消息权限后无法显示系统Toast的解决方案](http://blog.csdn.net/qq_25867141/article/details/52807705) ~
