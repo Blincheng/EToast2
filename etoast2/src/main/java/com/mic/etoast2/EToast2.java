@@ -2,6 +2,8 @@ package com.mic.etoast2;
 
 import android.content.Context;
 import android.graphics.PixelFormat;
+import android.os.Handler;
+import android.os.Message;
 import android.view.Gravity;
 import android.view.View;
 import android.view.WindowManager;
@@ -27,6 +29,7 @@ public class EToast2 {
     private static Toast oldToast;
     public static final int LENGTH_SHORT = 0;
     public static final int LENGTH_LONG = 1;
+    private static Handler handler;
     private CharSequence text;
 
     private EToast2(Context context, CharSequence text, int HIDE_DELAY){
@@ -56,6 +59,14 @@ public class EToast2 {
             params.gravity = Gravity.CENTER_HORIZONTAL | Gravity.BOTTOM;
             params.y = 200;
         }
+        if(handler == null){
+            handler = new Handler(){
+                @Override
+                public void handleMessage(Message msg) {
+                    EToast2.this.cancel();
+                }
+            };
+        }
     }
 
     public static EToast2 makeText(Context context, String text, int HIDE_DELAY){
@@ -80,7 +91,7 @@ public class EToast2 {
         timer.schedule(new TimerTask() {
             @Override
             public void run() {
-                EToast2.this.cancel();
+                handler.sendEmptyMessage(1);
             }
         }, time);
     }
@@ -92,6 +103,8 @@ public class EToast2 {
         timer = null;
         toast = null;
         oldToast = null;
+        contentView = null;
+        handler = null;
     }
     public void setText(CharSequence s){
         toast.setText(s);
