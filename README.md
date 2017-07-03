@@ -1,6 +1,6 @@
 [![](https://jitpack.io/v/Blincheng/EToast2.svg)](https://jitpack.io/#Blincheng/EToast2)
 
-v2.0.0来啦~客观往下看！
+v2.0来啦~客观往下看！
 
 EToast 一个关闭系统消息通知后依然可以显示的Toast，此版本完全是独立于v1.x.x的版本，实现方式上也是完全的不同，尽量的参考系统Toast的源码去实现。
 和上代EToast相比，有以下的改动：
