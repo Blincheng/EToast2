@@ -28,7 +28,7 @@ Step 2. Add the dependency
 
 
   	dependencies {
-		compile 'com.github.Blincheng:EToast2:v2.0.0'
+		compile 'com.github.Blincheng:EToast2:v2.0.1'
 	}
   
   
