@@ -37,15 +37,16 @@ Step 2. Add the dependency
 		compile 'com.github.Blincheng:EToast2:v2.0.2'
 	}
   
-  Step 3.添加权限（目前发现小米note、魅族pro6及个别厂家的分支版本需要添加以下权限）
- 
-   <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
-   
-   
-  对于上面的权限我再说明一下，当我们把WindowManager的LayoutParams设置成WindowManager.LayoutParams.TYPE_TOAST;
-  这个属性类型以后其实是不需要系统的悬浮窗权限的，但是个别厂家分支有点区别，所以为了保证程序不出现异常，特别强调添加以下权限。
+ **Step 3.添加权限（目前发现小米note、魅族pro6及个别厂家的分支版本需要添加以下权限**
+
+```
+<uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
+```
+
+对于上面的权限我再说明一下，当我们把WindowManager的LayoutParams设置成WindowManager.LayoutParams.TYPE_TOAST;
+这个属性类型以后其实是不需要系统的悬浮窗权限的，但是个别厂家分支有点区别，所以为了保证程序不出现异常，特别强调添加以下权限。
   
-  需要注意的是，此Toast非彼Toast，应该使用“import com.mic.etoast2.Toast”，建议在BaseActivity中如下使用：
+  最后需要注意的是，此Toast非彼Toast，应该使用“import com.mic.etoast2.Toast”，建议在BaseActivity中如下使用：
   
   
 	public void showShortText(String text) {
