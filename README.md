@@ -34,7 +34,7 @@ Step 2. Add the dependency
 
 
   	dependencies {
-		compile 'com.github.Blincheng:EToast2:v2.0.2'
+		compile 'com.github.Blincheng:EToast2:v2.0.3'
 	}
   
  **Step 3.添加权限（目前发现小米note、魅族pro6及个别厂家的分支版本需要添加以下权限**
