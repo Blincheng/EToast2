@@ -97,7 +97,13 @@ public class EToast2 {
     }
 
     public void cancel(){
-        manger.removeView(contentView);
+        try {
+            manger.removeView(contentView);
+        } catch (IllegalArgumentException e) {
+            //这边由于上下文被销毁后removeView可能会抛出IllegalArgumentException
+            //暂时这么处理，因为EToast2是轻量级的，不想和Context上下文的生命周期绑定在一块儿
+            //其实如果真的想这么做，可以参考博文2的第一种实现方式，添加一个空的fragment来做生命周期绑定
+        }
         timer.cancel();
         oldToast.cancel();
         timer = null;

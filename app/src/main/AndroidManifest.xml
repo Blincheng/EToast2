@@ -16,6 +16,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".TwoActivity" />
     </application>
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
 </manifest>
