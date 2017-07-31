@@ -50,8 +50,7 @@ public class EToast2 {
             params.height = WindowManager.LayoutParams.WRAP_CONTENT;
             params.width = WindowManager.LayoutParams.WRAP_CONTENT;
             params.format = PixelFormat.TRANSLUCENT;
-            params.windowAnimations = toast.getView().getAnimation().INFINITE;
-            params.type = WindowManager.LayoutParams.TYPE_TOAST;
+            params.windowAnimations = -1;
             params.setTitle("EToast2");
             params.flags = WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON
                     | WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE
