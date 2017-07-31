@@ -2,13 +2,15 @@
 
 V2.1.0 正式上线~（2017年7月31日）
 自从v2.0.0上线后，马上就有蛮多的朋友从1.X的版本升级上来了，尤其是某几个特别棒的同学。
-今天xiaogaofudao [](https://github.com/xiaogaofudao)发现了一个关键性因素，促使了今天EToast2.1版本才能正式上线，再次对他在此表达我的谢意。
+今天  [xiaogaofudao](https://github.com/xiaogaofudao)发现了一个关键性因素，促使了今天EToast2.1版本才能正式上线，再次对他在此表达我的谢意。
 
 也为了大家方便沟通和使用，建立了一个QQ群供大家交流，欢迎大家的加入
 
 群名称：EToast交流群
 
 群   号：547279762
+
+![这里写图片描述](http://img.blog.csdn.net/20170731145702011?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMjU4NjcxNDE=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast)
 
 我们来说下v2.1.0解决的问题吧：
 1. 小米note、魅族某些机器不显示Toast的问题
