@@ -32,10 +32,10 @@ public class Toast {
         }
     }
     private Toast(Context context, int resId, int duration) {
-        if (checkNotification == -1){
+        if(context instanceof Application)
+            checkNotification = 0;
+        else
             checkNotification = isNotificationEnabled(context) ? 0 : 1;
-        }
-
         if (checkNotification == 1 && context instanceof Activity) {
             mToast = EToast2.makeText(context, resId, duration);
         } else {
