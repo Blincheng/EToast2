@@ -16,7 +16,14 @@ V2.1.0 正式上线~（2017年7月31日）
 1. 小米note、魅族某些机器不显示Toast的问题
 2. 当弹出Toast后，页面快速关闭后闪退的问题
 3. 一些其他的细节优化
+----------------------------------------------------
 
+更新日志：
+
+v2.1.1（2017年8月2日11:01:58）
+
+1. 修复当EToast使用Application环境时闪退的问题（原因是去掉TYPE_TOAST这个类型，导致的异常）
+    
 -------------------------------------------------------
 
 v2.0来啦~客观往下看！
@@ -52,7 +59,7 @@ Step 2. Add the dependency
 
 
   	dependencies {
-		compile 'com.github.Blincheng:EToast2:v2.1.0'
+		compile 'com.github.Blincheng:EToast2:v2.1.1'
 	}
   
 

@@ -2,6 +2,7 @@ package com.mic.etoast2;
 
 import android.app.Activity;
 import android.app.AppOpsManager;
+import android.app.Application;
 import android.content.Context;
 import android.content.pm.ApplicationInfo;
 
@@ -20,7 +21,10 @@ public class Toast {
     private static int checkNotification = 0;
     private Object mToast;
     private Toast(Context context, String message, int duration) {
-        checkNotification = isNotificationEnabled(context) ? 0 : 1;
+        if(context instanceof Application)
+            checkNotification = 0;
+        else
+            checkNotification = isNotificationEnabled(context) ? 0 : 1;
         if (checkNotification == 1) {
             mToast = EToast2.makeText(context, message, duration);
         } else {
