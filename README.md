@@ -10,7 +10,6 @@ V2.1.0 正式上线~（2017年7月31日）
 
 群   号：547279762
 
-![这里写图片描述](http://img.blog.csdn.net/20170731145702011?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMjU4NjcxNDE=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast)
 
 我们来说下v2.1.0解决的问题吧：
 1. 小米note、魅族某些机器不显示Toast的问题
