@@ -14,7 +14,7 @@ V2.2.0来了，米娜桑，我还没有忘记大家~
 v2.2.0（2018年11月15日15:25:20）
 
 1. 新增EToastUtils，需要在Application中注册EToastUtils，调用方法为EToastUtils.show(text);
-2. 适配到Android O，对于Android M以下的机型直接绕过悬浮窗权限弹出全局Toast
+2. 适配到Android 9，对于Android M以下的机型直接绕过悬浮窗权限弹出全局Toast
 3. 优化对context使用Application的支持，前提是需要提前在Application中注册EToastUtils
     
 -------------------------------------------------------
