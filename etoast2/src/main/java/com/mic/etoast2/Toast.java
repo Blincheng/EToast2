@@ -1,5 +1,6 @@
 package com.mic.etoast2;
 
+import android.app.Activity;
 import android.content.Context;
 
 /**
@@ -14,14 +15,26 @@ public class Toast {
         if (EToastUtils.isNotificationEnabled(context)) {
             mToast = android.widget.Toast.makeText(context, message, duration);
         } else {
-            mToast = EToast2.makeText(context, message, duration);
+            if(context instanceof Activity){
+                mToast = EToast2.makeText(context, message, duration);
+            }else{
+                //当没有通知权限，并且context是Application时，调用EToastUtils获取当前Activity
+                if(EToastUtils.init().getActivity() != null)
+                    mToast = EToast2.makeText(EToastUtils.init().getActivity(), message, duration);
+            }
         }
     }
     private Toast(Context context, int resId, int duration) {
         if (EToastUtils.isNotificationEnabled(context)) {
             mToast = android.widget.Toast.makeText(context, resId, duration);
         } else {
-            mToast = EToast2.makeText(context, resId, duration);
+            if(context instanceof Activity){
+                mToast = EToast2.makeText(context, resId, duration);
+            }else{
+                //当没有通知权限，并且context是Application时，调用EToastUtils获取当前Activity
+                if(EToastUtils.init().getActivity() != null)
+                    mToast = EToast2.makeText(EToastUtils.init().getActivity(), resId, duration);
+            }
         }
     }
 

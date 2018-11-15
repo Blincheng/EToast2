@@ -25,6 +25,12 @@ public class EToastUtils implements Application.ActivityLifecycleCallbacks {
         return instance;
     }
     private Activity mActivity;
+    public Activity getActivity(){
+        if(instance != null)
+            return instance.mActivity;
+        else
+            return null;
+    }
     public static void show(CharSequence text){
         if(instance.mActivity != null&&instance != null)
             Toast.makeText(instance.mActivity,text,EToast2.LENGTH_SHORT).show();
@@ -37,12 +43,14 @@ public class EToastUtils implements Application.ActivityLifecycleCallbacks {
 
     @Override
     public void onActivityCreated(Activity activity, Bundle bundle) {
-
+        if(instance != null)
+            instance.mActivity = activity;
     }
 
     @Override
     public void onActivityStarted(Activity activity) {
-
+        if(instance != null)
+            instance.mActivity = activity;
     }
 
     @Override
