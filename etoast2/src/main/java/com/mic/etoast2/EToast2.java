@@ -2,12 +2,15 @@ package com.mic.etoast2;
 
 import android.content.Context;
 import android.graphics.PixelFormat;
+import android.os.Build;
 import android.os.Handler;
 import android.os.Message;
 import android.view.Gravity;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Toast;
+
+import com.mic.permission.OpPermissionUtils;
 
 import java.util.Timer;
 import java.util.TimerTask;
@@ -57,6 +60,18 @@ public class EToast2 {
                     | WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE;
             params.gravity = Gravity.CENTER_HORIZONTAL | Gravity.BOTTOM;
             params.y = 200;
+            //M的用户不需要悬浮窗权限即可实现全局弹窗
+            if(Build.VERSION.SDK_INT > Build.VERSION_CODES.M){
+                if(OpPermissionUtils.checkPermission(context)){
+                    if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.O){
+                        params.type = WindowManager.LayoutParams.TYPE_APPLICATION_OVERLAY;
+                    }else {
+                        params.type = WindowManager.LayoutParams.TYPE_PHONE;
+                    }
+                }
+            }else{
+                params.type = WindowManager.LayoutParams.TYPE_TOAST;
+            }
         }
         if(handler == null){
             handler = new Handler(){
@@ -68,9 +83,8 @@ public class EToast2 {
         }
     }
 
-    public static EToast2 makeText(Context context, String text, int HIDE_DELAY){
-        EToast2 toast = new EToast2(context, text, HIDE_DELAY);
-        return toast;
+    public static EToast2 makeText(Context context, CharSequence text, int HIDE_DELAY){
+        return new EToast2(context, text, HIDE_DELAY);
     }
 
     public static EToast2 makeText(Context context, int resId, int HIDE_DELAY) {
