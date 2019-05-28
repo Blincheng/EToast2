@@ -19,8 +19,8 @@ public class Toast {
                 mToast = EToast2.makeText(context, message, duration);
             }else{
                 //当没有通知权限，并且context是Application时，调用EToastUtils获取当前Activity
-                if(EToastUtils.init().getActivity() != null)
-                    mToast = EToast2.makeText(EToastUtils.init().getActivity(), message, duration);
+                if(EToastUtils.getInstance().getActivity() != null)
+                    mToast = EToast2.makeText(EToastUtils.getInstance().getActivity(), message, duration);
             }
         }
     }
@@ -32,8 +32,8 @@ public class Toast {
                 mToast = EToast2.makeText(context, resId, duration);
             }else{
                 //当没有通知权限，并且context是Application时，调用EToastUtils获取当前Activity
-                if(EToastUtils.init().getActivity() != null)
-                    mToast = EToast2.makeText(EToastUtils.init().getActivity(), resId, duration);
+                if(EToastUtils.getInstance().getActivity() != null)
+                    mToast = EToast2.makeText(EToastUtils.getInstance().getActivity(), resId, duration);
             }
         }
     }

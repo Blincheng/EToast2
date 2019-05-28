@@ -19,9 +19,14 @@ import java.lang.reflect.Method;
 public class EToastUtils implements Application.ActivityLifecycleCallbacks {
     private static EToastUtils instance;
     private EToastUtils(){}
-    public static EToastUtils init(){
-        if(instance == null)
+    public static EToastUtils init(Application application){
+        if(instance == null){
             instance = new EToastUtils();
+            application.registerActivityLifecycleCallbacks(instance);
+        }
+        return instance;
+    }
+    public static EToastUtils getInstance(){
         return instance;
     }
     private Activity mActivity;
