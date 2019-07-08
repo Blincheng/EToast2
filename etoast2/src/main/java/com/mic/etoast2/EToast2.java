@@ -117,11 +117,15 @@ public class EToast2 {
             //暂时这么处理，因为EToast2是轻量级的，不想和Context上下文的生命周期绑定在一块儿
             //其实如果真的想这么做，可以参考博文2的第一种实现方式，添加一个空的fragment来做生命周期绑定
         }
-        timer.cancel();
-        oldToast.cancel();
-        timer = null;
+        if (timer != null) {
+            timer.cancel();
+            timer = null;
+        }
+        if (oldToast != null) {
+            oldToast.cancel();
+            oldToast = null;
+        }
         toast = null;
-        oldToast = null;
         contentView = null;
         handler = null;
     }
